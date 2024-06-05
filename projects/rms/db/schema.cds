@@ -16,7 +16,7 @@ entity Risks : cuid, managed {
     impact                   : Integer;
     // bp : Association to BusinessPartners;
     virtual criticality      : Integer;
-    virtual PrioCLriticality : Integer;
+    virtual PrioCriticality : Integer;
 }
 
 entity Mitigations : cuid, managed {

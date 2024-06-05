@@ -35,8 +35,8 @@ annotate service.Risks with @(
             },
             {
                 $Type : 'UI.DataField',
-                Label : 'PrioCLriticality',
-                Value : PrioCLriticality,
+                Label : 'PrioCriticality',
+                Value : PrioCriticality,
             },
         ],
     },
@@ -85,11 +85,13 @@ annotate service.Risks with @(
             $Type : 'UI.DataField',
             Label : 'Priority',
             Value : prio_code,
+            Criticality : PrioCriticality,
         },
         {
             $Type : 'UI.DataField',
             Label : '{i18n>Impact}',
             Value : impact,
+            Criticality : criticality,
         },
     ],
 );
@@ -163,11 +165,15 @@ annotate service.Risks with @(
             },{
                 $Type : 'UI.DataField',
                 Value : prio_code,
+                Criticality : PrioCriticality,
+                CriticalityRepresentation : #WithIcon,
             },
             {
                 $Type : 'UI.DataField',
                 Value : impact,
                 Label : '{i18n>Impact}',
+                Criticality : criticality,
+                CriticalityRepresentation : #WithIcon,
             },],
     }
 );
@@ -208,4 +214,10 @@ annotate service.Mitigations with {
 };
 annotate service.Mitigations with {
     timeline @Common.FieldControl : #ReadOnly
+};
+annotate service.Risks with {
+    prio @Common.Text : {
+            $value : prio.descr,
+            ![@UI.TextArrangement] : #TextOnly,
+        }
 };
