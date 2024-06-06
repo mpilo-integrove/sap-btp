@@ -11,7 +11,8 @@
     "@sap/cds": "7.2.0",
     "@sap/cds-dk": "7.6.0",
     "@sap/cds-mtxs": "^1.18.1",
-    "express": "^4"
+    "express": "^4",
+    "@sap/xssec": "^3"
   },
   "devDependencies": {
     "@cap-js/sqlite": "^1",
@@ -32,6 +33,9 @@
         "credentials": {
           "url": "https://sandbox.api.sap.com/s4hanacloud/sap/opu/odata/sap/API_BUSINESS_PARTNER/"
         }
+      },
+      "[production]": {
+        "auth": "xsuaa"
       }
     }
   },
